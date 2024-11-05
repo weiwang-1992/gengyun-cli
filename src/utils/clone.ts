@@ -6,10 +6,10 @@ import chalk from 'chalk';
 const logger = createLogger({
   spinner: {
     interval: 300, 
-    // frames: ['⠋', '⠙', '⠹', '⠸', '⠼', '⠴', '⠦', '⠧', '⠇', '⠏'].map(item => {
-    frames: ["+", "-","+", "-","+", "-","+", "-","+", "-","+", "-",].map(item => {
-      chalk.green(item)
-      return item
+    frames: ['⠋', '⠙', '⠹', '⠸', '⠼', '⠴', '⠦', '⠧', '⠇', '⠏'].map(item => {
+    // frames: ["+", "-","+", "-","+", "-","+", "-","+", "-","+", "-",].map(item => {
+      // chalk.green(item)
+      return chalk.green(item)
     })
   }
 })
@@ -26,8 +26,14 @@ export async function clone(url: string, projectName: string, options: string[])
     await logger(git.clone(url, projectName, options),'代码下载中：',{
       estimate: 5000, // 预计下载时间
     })
-    chalk.green('下载成功');
-    
+    console.log();
+    console.log(chalk.blueBright('================================================'));
+    console.log(chalk.blueBright('========== 欢迎使用 gengyun-cli 脚手架 =========='));
+    console.log(chalk.blueBright('================================================'));
+    console.log();
+    console.log();
+    console.log(chalk.blueBright('============= 请使用 npm install 安装依赖 ============'));
+    console.log(chalk.blueBright('============= 使用 npm run dev 运行项目 =============='));
   }catch(error){
     console.log(error);
   }
