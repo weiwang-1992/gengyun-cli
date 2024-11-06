@@ -17,7 +17,7 @@
   "bin": {
     "gengyun": "bin/index.js"
   },
-  "files":[
+  "files": [
     "bin",
     "dist",
     "README.md"
@@ -30,9 +30,11 @@
     "@rollup/plugin-node-resolve": "15.3.0",
     "@rollup/plugin-terser": "0.4.4",
     "@types/fs-extra": "^11.0.4",
+    "axios": "^1.6.2",
     "chalk": "^4.1.2",
     "commander": "^12.1.0",
     "fs-extra": "^11.2.0",
+    "lodash": "^4.17.21",
     "progress-estimator": "^0.3.1",
     "rollup": "4.6.1",
     "rollup-plugin-node-externals": "7.1.3",
