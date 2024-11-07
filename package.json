@@ -1,6 +1,6 @@
 {
   "name": "gengyun-cli",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "gengyun-cli 脚手架工具",
   "main": "index.js",
   "scripts": {
