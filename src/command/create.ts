@@ -69,7 +69,7 @@ export const checkVersion = async (name: string, version: string) => {
   const need = gt(latestVersion, version);
   if (need) {
       console.warn(
-          `检查到dawei最新版本： ${chalk.blackBright(latestVersion)}，当前版本是：${chalk.blackBright(version)}`
+          `检查到gengyun-cli最新版本： ${chalk.blackBright(latestVersion)}，当前版本是：${chalk.blackBright(version)}`
       );
       console.log(
           `可使用： ${chalk.yellow('npm install gengyun-cli@latest')}，或者使用：${chalk.yellow('gengyun update')}更新`

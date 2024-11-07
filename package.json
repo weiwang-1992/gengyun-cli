@@ -1,6 +1,6 @@
 {
   "name": "gengyun-cli",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "gengyun-cli 脚手架工具",
   "main": "index.js",
   "scripts": {
@@ -36,6 +36,7 @@
     "commander": "^12.1.0",
     "fs-extra": "^11.2.0",
     "lodash": "^4.17.21",
+    "ora": "^5.4.1",
     "progress-estimator": "^0.3.1",
     "rollup": "4.6.1",
     "rollup-plugin-node-externals": "7.1.3",

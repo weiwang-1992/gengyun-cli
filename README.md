@@ -22,11 +22,14 @@ gengyun create
 # 执行项目文件夹名称并选择模板创建新项目
 gengyun create [projectName]
 
+# 更新脚手架到最新版本
+gengyun update 
+
 # 查看脚手架版本
 gengyun -v
 gengyun --version
 ```
 
 ## 更新记录
--  v0.02 增加校验版本是否需要更新功能 2024.11.07 
-
+-  v0.0.2 增加校验版本是否需要更新功能 2024.11.07 
+-  v0.1.0 增加update方法  2024.11.07
