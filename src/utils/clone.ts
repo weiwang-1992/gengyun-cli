@@ -1,6 +1,8 @@
 import { simpleGit, SimpleGit, SimpleGitOptions } from 'simple-git';
 import createLogger from 'progress-estimator';
 import chalk from 'chalk';
+import { log } from './log'
+const figlet = require('figlet')
 
 //初始化进度条
 const logger = createLogger({
@@ -20,21 +22,30 @@ const gitOptions: Partial<SimpleGitOptions> = {
    maxConcurrentProcesses: 6, // 最大并发进程数量
 };
 
+const goodPrint = async () => {
+  const data = await figlet('gengyun-cli')
+  console.log(chalk.rgb(40,156,193).visible(data))
+}
+
 export async function clone(url: string, projectName: string, options: string[]) {
   const git: SimpleGit = simpleGit(gitOptions);
   try {
     await logger(git.clone(url, projectName, options),'代码下载中：',{
       estimate: 5000, // 预计下载时间
     })
+    // 相关提示
+    goodPrint();
     console.log();
     console.log(chalk.blueBright('================================================'));
     console.log(chalk.blueBright('========== 欢迎使用 gengyun-cli 脚手架 =========='));
     console.log(chalk.blueBright('================================================'));
     console.log();
-    console.log();
-    console.log(chalk.blueBright('============= 请使用 npm install 安装依赖 ============'));
-    console.log(chalk.blueBright('============= 使用 npm run dev 运行项目 =============='));
+    log.success(`项目创建成功${chalk.blueBright(projectName)}`)
+    log.success("执行以下命令启动项目：")
+    log.info(`cd ${chalk.blueBright(projectName)}`)
+    log.info(`${chalk.yellow('npm')} install`)
+    log.info(`${chalk.yellow('npm')} run dev`)
   }catch(error){
-    console.log(error);
+    log.error(chalk.red('代码下载失败'));
   }
 }
